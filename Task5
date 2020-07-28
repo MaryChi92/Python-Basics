@@ -1,3 +1,6 @@
+revenue = int(input('Введите значение выручки вашей фирмы за прошедший месяц: '))
+expenses = int(input('Введите значение издержек фирмы за прошедший месяц: '))
+
 if revenue - expenses > 0:
     profit = revenue - expenses
     print(f'Прибыль за предыдущий месяц составила: {profit}')
