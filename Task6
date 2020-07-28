@@ -1,0 +1,14 @@
+distance_real = int(input('Сколько километров вы пробежали сегодня? '))
+distance_aim = int(input('Сколько километров вы хотите бегать? '))
+day = 1
+
+while True:
+    if distance_real >= distance_aim:
+        print('Поздравляем! Вы уже бегаете заветное число километров)')
+        break
+    else:
+        distance_real = distance_real + (distance_real * 0.1)
+        day += 1
+        if distance_real >= distance_aim:
+            print(f'На {day} день вы достигните результата не менее {distance_aim} километров.')
+            break
