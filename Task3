@@ -1,0 +1,5 @@
+number = input('Введите любое число: ')
+number2 = number + number
+number3 = number + number2
+number4 = int(number) + int(number2) + int(number3)
+print(f'{number} + {number2} + {number3} = {number4}')

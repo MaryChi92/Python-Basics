@@ -1,0 +1,9 @@
+seconds = int(input('Введите время в секундах: '))
+
+hours = seconds // 3600
+min = (seconds % 3600) // 60
+sec = seconds - (hours * 3600) - (min * 60)
+print(f'{seconds} секунд = {hours}:{min}:{sec}')
+
+# или записать все в одну строку вместо четерых
+print(f'{seconds} секунд = {(seconds) // 3600}:{(seconds) % 3600 // 60}:{(seconds) - (hours) * 3600 - (min) * 60}')

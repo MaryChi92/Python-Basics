@@ -1,0 +1,13 @@
+revenue = int(input('Введите значение выручки вашей фирмы за прошедший месяц: '))
+expenses = int(input('Введите значение издержек фирмы за прошедший месяц: '))
+
+if revenue - expenses > 0:
+    profit = revenue - expenses
+    print(f'Прибыль за предыдущий месяц составила: {profit}')
+    print(f'Рентабельность продаж = {(profit) / (revenue)}')
+    staff = int(input('Сколько сотрудников работает в вашей фирме? '))
+    print(f'Прибыль фирмы в рассчете на одного сотрудника составляет: {(profit) / staff:.0f}')
+elif revenue == expenses:
+    print('Ваша фирма отработала в ноль')
+else:
+    print('Убыток вашей фирмы за последний месяц составил: ', - (revenue - expenses))

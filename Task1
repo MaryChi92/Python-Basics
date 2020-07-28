@@ -1,0 +1,7 @@
+print('Hello! Answer some questions so we can find the best hotel offers for YOU')
+name = input("What's your name? ")
+country = input('Where do you want to travel? ')
+date_arr = float(input('Enter the date of arrival (dd.mm): '))
+date_dep = float(input('Enter the departure date (dd.mm): '))
+budget = int(input('What is your budget, USD? '))
+print(f'{name}, see the best hotel deals in {country} for the {date_arr} - {date_dep} considering your budget of {budget} dollars below:')
