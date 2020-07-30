@@ -1,0 +1,19 @@
+my_list = [9, 7, 5, 3, 3, 2]
+
+user_number = int(input('Введите ваше место в рейтинге: '))
+
+for n in my_list:
+    if user_number > n:
+        my_list.insert(0, user_number)
+        break
+    elif user_number == n:
+        m = my_list.index(n) + 1
+        my_list.insert(m, user_number)
+        break
+    elif user_number < 0:
+        print('Место в рейтинге не может быть отрицательным')
+        break
+    elif user_number < n:
+        my_list.append(user_number)
+        break
+print(my_list)
