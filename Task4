@@ -1,0 +1,6 @@
+user_str = input('Enter something, pleeeeeeease! ')
+user_list = user_str.split()
+# print(user_list)
+
+for i, element in enumerate(user_list, 1):
+    print(f'{i} {element:.10}')
