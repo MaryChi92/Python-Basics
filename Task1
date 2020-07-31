@@ -1,0 +1,5 @@
+my_list = [5, True, 'beauty', 3.75, [5, 'great'], (8, 7, 6), {1, 3, 5}, {1: 'yes', 2: 'no'}]
+print(my_list)
+
+for i, element in enumerate(my_list, 1):
+    print(i, type(element))
