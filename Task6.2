@@ -1,0 +1,37 @@
+goods = []
+i = 1
+name_list = []
+price_list = []
+quantity_list = []
+unit_list = []
+
+print('Здравствуйте! Это программа учета товарных остатков. Здесь вы можете внести данные о товарах в вашем'
+      ' магазине/складе, а также получить аналитику по ним.')
+
+while True:
+    user_answer = input('Выберите действие: 1 - ввести данные о других товарах, 2 - просмотреть все карточки товаров,'
+                        ' 3 - получить аналитику по товарам, 4 - выйти из программы. Введите цифру: ')
+    if user_answer == '1':
+        name = input(f'Введите название товара {i}: ')
+        name_list.append(name)
+        price = input(f'Введите цену товара {name}: ')
+        price_list.append(price)
+        quantity = input(f'Введите количество товара {name}: ')
+        quantity_list.append(quantity)
+        unit = input(f'Введите единицу измерения товара {name}: ')
+        unit_list.append(unit)
+        item = (i, {'название': name, 'цена': price, 'количество': quantity, 'ед': unit})
+        goods.append(item)
+        i += 1
+        print(goods)
+        continue
+    elif user_answer == '2':
+        print(goods)
+        continue
+    elif user_answer == '3':
+        goods_dict = {'название': name_list, 'цена': price_list, 'количество': quantity_list, 'ед': unit_list}
+        print(goods_dict)
+        continue
+    if user_answer == '4':
+        print('Работа программы завершена. Хороших продаж!')
+        break
