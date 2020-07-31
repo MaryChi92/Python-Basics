@@ -1,0 +1,15 @@
+user_list = []
+i = 1
+n = int(input('Сколько элементов будет в вашем списке? '))
+
+while i <= n:
+    element = input('Введите элемент списка: ')
+    user_list.append(element)
+    i += 1
+print(user_list)
+
+a = 0
+for i in range(int(len(user_list) / 2)):
+    user_list[a], user_list[a + 1] = user_list[a + 1], user_list[a]
+    a += 2
+print(user_list)

@@ -1,0 +1,30 @@
+goods = []
+i = 1
+n = int(input('Какое количество наименований хотите внести в программу? '))
+name_list = []
+price_list = []
+quantity_list = []
+unit_list = []
+
+while i <= n:
+    name = input(f'Введите название товара {i}: ')
+    name_list.append(name)
+    price = input(f'Введите цену товара {name}: ')
+    price_list.append(price)
+    quantity = input(f'Введите количество товара {name}: ')
+    quantity_list.append(quantity)
+    unit = input(f'Введите единицу измерения товара {name}: ')
+    unit_list.append(unit)
+    item = (i, {'название': name, 'цена': price, 'количество': quantity, 'ед': unit})
+    goods.append(item)
+    i += 1
+
+print(goods)
+
+goods_dict = {
+    'название': name_list,
+    'цена': price_list,
+    'количество': quantity_list,
+    'ед': unit_list
+}
+print(goods_dict)
