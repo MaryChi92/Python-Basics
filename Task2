@@ -1,0 +1,11 @@
+with open('Task2.txt', 'r', encoding='utf-8') as t2:
+    content = t2.readlines()
+    print('Str quantity: ', len(content))
+
+    str = []
+    str_el = []
+    for i in content:
+        str = i.split()
+        str_el.append(len(str))
+    for n, el in enumerate(str_el, 1):
+        print(f'{n} str: {el} words')
