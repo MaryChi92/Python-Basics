@@ -1,0 +1,28 @@
+import json
+
+profit = {}
+pr_a = {}
+profit_firm = 0
+prof_aver = 0
+i = 0
+
+with open('Task7.txt', 'r', encoding='utf-8') as t7:
+
+    for line in t7:
+        print(line, end='')
+        name, type, revenue, expenses = line.split()
+        profit[name] = int(revenue) - int(expenses)
+        if profit.setdefault(name) >= 0:
+            profit_firm += profit.setdefault(name)
+            i += 1
+    if i != 0:
+        profit_average = profit_firm / i
+    else:
+        print('All the firms have no profit.')
+
+    pr_a = {'Average profit': round(profit_average)}
+    result = [profit, pr_a]
+    print('\n', result)
+
+with open("Task7.json", "w", encoding='utf-8') as task7:
+    json.dump(result, task7)
