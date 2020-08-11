@@ -1,0 +1,17 @@
+with open('Task1.txt', 'w', encoding='utf-8') as t1:
+
+    # Var 1
+    while True:
+        user_data = input('Enter smth: ')
+        if user_data == '':
+            break
+        else:
+            t1.writelines(f'{user_data}\n')
+
+    # Var 2
+    while True:
+        user_data = input('Enter smth: ')
+        if user_data == '':
+            break
+        else:
+            print(user_data, file=t1)

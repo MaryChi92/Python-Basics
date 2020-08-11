@@ -1,0 +1,13 @@
+with open('Task3.txt', 'r', encoding='utf-8') as t3:
+    content = t3.readlines()
+
+    str = []
+    for i in content:
+        str.append(i.split())
+
+    average_salary = 0
+    for el in str:
+        if float(el[1]) < 20000:
+            print(el[0])
+        average_salary += float(el[1]) / len(str)
+    print(average_salary)

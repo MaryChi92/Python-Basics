@@ -1,0 +1,20 @@
+from googletrans import Translator
+translator = Translator()
+
+with open('Task4.txt', 'r', encoding='utf-8') as t4:
+    content = t4.readlines()
+
+str = []
+for i in content:
+    str.append(i.split())
+
+str2 = []
+for i in str:
+    str2.append(i[0])
+
+with open('Task4new.txt', 'w', encoding='utf-8') as t4new:
+    n = 1
+    for i in str2:
+        result = translator.translate(i, src='en', dest='ru')
+        print(f'{result.text} - {n}', file=t4new)
+        n += 1

@@ -1,0 +1,16 @@
+from random import randint
+
+with open('Task5.txt', 'w') as t5:
+    numbers = [randint(-30, 30) for i in range(0, 9)]
+    for i in numbers:
+        t5.write(f'{i} ')
+
+with open('Task5.txt', 'r') as t5:
+    content = t5.readline()
+    content = list(map(int, content.split()))
+    print(content)
+
+    sum_n = 0
+    for i in content:
+        sum_n += int(i)
+    print(sum_n)
