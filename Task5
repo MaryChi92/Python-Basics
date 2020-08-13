@@ -1,0 +1,28 @@
+class Stationery:
+    title = ['pen', 'pencil', 'marker']
+
+    def draw(self):
+        print('Запуск отрисовки')
+
+
+class Pen(Stationery):
+    def draw(self):
+        print('Запуск отрисовки', Stationery.title[0])
+
+
+class Pencil(Stationery):
+    def draw(self):
+        print('Запуск отрисовки', Stationery.title[1])
+
+
+class Marker(Stationery):
+    def draw(self):
+        print('Запуск отрисовки', Stationery.title[2])
+
+
+p = Pen()
+p.draw()
+pc = Pencil()
+pc.draw()
+m = Marker()
+m.draw()
