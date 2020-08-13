@@ -1,0 +1,25 @@
+from time import sleep
+import turtle
+
+
+class TrafficLight:
+
+    __color = ['Red', 'Yellow', 'Green']
+
+    def running(self):
+        turtle.reset()
+        while True:
+            for i in TrafficLight.__color:
+                print(i)
+                if i == 'Red':
+                    sleep(7)
+                elif i == 'Yellow':
+                    sleep(2)
+                if i == 'Green':
+                    turtle.down()
+                    turtle.forward(30)
+                    sleep(7)
+
+
+a = TrafficLight()
+a.running()
