@@ -1,0 +1,107 @@
+class Car:
+    def __init__(self, speed, color, name, is_police):
+        self.speed = int(speed)
+        self.color = color
+        self.name = name
+        self.is_police = bool(is_police)
+
+    def go(self):
+        print('The car has started the engine')
+
+    def stop(self):
+        print('The car has just stopped')
+
+    def turn(self, direction):
+        if direction.lower() == 'left' or direction.lower() == 'right':
+            print('The car turned', direction.lower())
+        if direction.lower() == 'forward' or direction.lower() == 'back' or direction.lower() == 'nowhere':
+            print('The car is moving', direction.lower())
+
+    def show_speed(self):
+        if self.speed < 0:
+            print("Speed value can't be negative! I guess the car is not moving.")
+        elif self.speed == 0:
+            print('The car is not moving.')
+        else:
+            print(f"The {self.name}'s current speed is {self.speed}")
+
+
+class TownCar(Car):
+
+    def hi(self):
+        print(f'Hi! This is {self.name}. My color is {self.color.lower()}.')
+        print("I'm a police car") if self.is_police else print('', end='')
+
+    def show_speed(self):
+        if self.speed > 60:
+            print(f"Speeding!!! The {self.name}'s current speed is {self.speed}")
+        elif self.speed < 0:
+            print("Speed value can't be negative! I guess the car is not moving.")
+        elif self.speed == 0:
+            print('The car is not moving.')
+        else:
+            print(f"The {self.name}'s current speed is {self.speed}")
+
+
+class SportCar(Car):
+
+    def hi(self):
+        print(f'Hi! This is {self.name}. My color is {self.color.lower()}.')
+        print("I'm a police car") if self.is_police else print('', end='')
+
+
+class WorkCar(Car):
+
+    def hi(self):
+        print(f'Hi! This is {self.name}. My color is {self.color.lower()}.')
+        print("I'm a police car") if self.is_police else print('', end='')
+
+    def show_speed(self):
+        if self.speed > 40:
+            print(f"Speeding!!! The {self.name}'s current speed is {self.speed}")
+        elif self.speed < 0:
+            print("Speed value can't be negative! I guess the car is not moving.")
+        elif self.speed == 0:
+            print('The car is not moving.')
+        else:
+            print(f"The {self.name}'s current speed is {self.speed}")
+
+
+class PoliceCar(Car):
+
+    def hi(self):
+        print(f'Hi! This is {self.name}. My color is {self.color.lower()}.')
+        print("I'm a police car") if self.is_police else print('', end='')
+
+
+t = TownCar(name=input('Enter the car name: '), color=input('Enter the color: '), speed=input('Enter the car speed: '),
+            is_police=input("Is it a police car? Enter 'Yes' if YES or press Enter if NO: "))
+t.hi()
+t.go()
+t.show_speed()
+t.turn(input("Where is the car moving? Enter 'Forward', 'Back', 'Left', 'Right' or 'Nowhere': "))
+t.stop()
+
+s = SportCar(name=input('Enter the car name: '), color=input('Enter the color: '), speed=input('Enter the car speed: '),
+            is_police=input("Is it a police car? Enter 'Yes' if YES or press Enter if NO: "))
+s.hi()
+s.go()
+s.show_speed()
+s.turn(input("Where is the car moving? Enter 'Forward', 'Back', 'Left', 'Right' or 'Nowhere': "))
+s.stop()
+
+w = WorkCar(name=input('Enter the car name: '), color=input('Enter the color: '), speed=input('Enter the car speed: '),
+            is_police=input("Is it a police car? Enter 'Yes' if YES or press Enter if NO: "))
+w.hi()
+w.go()
+w.show_speed()
+w.turn(input("Where is the car moving? Enter 'Forward', 'Back', 'Left', 'Right' or 'Nowhere': "))
+w.stop()
+
+p = PoliceCar(name=input('Enter the car name: '), color=input('Enter the color: '), speed=input('Enter the car speed: '),
+            is_police=input("Is it a police car? Enter 'Yes' if YES or press Enter if NO: "))
+p.hi()
+p.go()
+p.show_speed()
+p.turn(input("Where is the car moving? Enter 'Forward', 'Back', 'Left', 'Right' or 'Nowhere': "))
+p.stop()
