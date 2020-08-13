@@ -1,0 +1,30 @@
+class Worker:
+
+    # income = {'wage': 0, 'bonus': 0}
+
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {'wage': wage, 'bonus': bonus}
+
+
+class Position(Worker):
+
+    def get_full_name(self):
+        print(self.name + ' ' + self.surname)
+
+    def get_total_income(self):
+        print("The employee's total income =", int(self._income.get('wage')) + int(self._income.get('bonus')),
+              'See the detailed info:', self._income)
+
+
+p1 = Position(input('Employee name: '), input('Employee surname: '), input('Position: '), input('Employee wage: '),
+             input('Bonus for the previous month: '))
+p1.get_full_name()
+p1.get_total_income()
+
+p2 = Position(input('Employee name: '), input('Employee surname: '), input('Position: '), input('Employee wage: '),
+             input('Bonus for the previous month: '))
+p2.get_full_name()
+p2.get_total_income()
