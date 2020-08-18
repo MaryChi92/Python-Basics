@@ -1,0 +1,65 @@
+from abc import ABC, abstractmethod
+
+
+class Clothes(ABC):
+
+    def __init__(self, size, height):
+        self.size = size
+        self.height = height
+
+    @abstractmethod
+    def coat_cloth(self):
+        print(round(self.size / 6.5 + 0.5, 2))
+
+    @abstractmethod
+    def suit_cloth(self):
+        print(round(2 * self.height + 0.3, 2))
+
+    @abstractmethod
+    def total_cloth(self):
+        print(round((self.size / 6.5 + 0.5) + (2 * self.height + 0.3), 2))
+
+
+class Coat(Clothes):
+
+        @property
+        def size(self):
+            return self.__size
+
+        # сеттер для создания свойств
+        @size.setter
+        def size(self, size):
+            if size < 34:
+                self.__size = 34
+            elif size > 56:
+                self.__size = 56
+            else:
+                self.__size = size
+
+        def coat_cloth(self):
+            super().coat_cloth()
+
+        def suit_cloth(self):
+            print()
+
+        def total_cloth(self):
+            super().total_cloth()
+
+
+class Suit(Clothes):
+    def coat_cloth(self):
+        print()
+
+    def suit_cloth(self):
+        super().suit_cloth()
+
+    def total_cloth(self):
+        super().total_cloth()
+
+
+c = Coat(42, 180)
+c.coat_cloth()
+
+s = Suit(42, 180)
+s.suit_cloth()
+s.total_cloth()
