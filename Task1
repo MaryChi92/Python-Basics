@@ -1,0 +1,18 @@
+class Matrix:
+    def __init__(self, matrix):
+        self.matrix = matrix
+
+    def __str__(self):
+        return '\n'.join(' '.join(map(str, row)) for row in self.matrix)
+
+    def __add__(self, other):
+        return Matrix(list(map(lambda x, y: list(map(lambda z, w: z + w, x, y)), self.matrix, other.matrix)))
+
+
+matrix_1 = Matrix([[5, 3, -1], [17, 6, 8], [9, -5, 0]])
+matrix_2 = Matrix([[10, 3, 0], [-15, -9, 7], [4, 2, 11]])
+print(matrix_1)
+print()
+print(matrix_2)
+print()
+print(matrix_1 + matrix_2)
