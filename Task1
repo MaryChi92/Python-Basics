@@ -1,0 +1,19 @@
+class Date:
+    def __init__(self, day, month, year):
+        self.day = day
+        self.month = month
+        self.year = year
+
+    @classmethod
+    def date_number(cls, date):
+        day, month, year = date.split('-')
+        return cls(int(day), int(month), int(year))
+
+    @staticmethod
+    def validate(self):
+        return f'The date {self.day}-{self.month}-{self.year} is correct!' if 1 <= self.day <= 31 and 1 <= self.month <= 12 and 1 <= self.year <= 2020 else print('The correct values for dd are 01-31; for the month 01-12; for the year 0001-2099! Please, try again.')
+
+
+my_str = input('Enter any date (in accordance with the format dd-mm-yyyy: ')
+my_1 = Date.date_number(my_str)
+print(my_1.validate(my_1))

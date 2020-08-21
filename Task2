@@ -1,0 +1,16 @@
+class ZeroError(Exception):
+    def __init__(self, warning):
+        self.warning = warning
+
+
+num_1 = input('Enter any number: ')
+num_2 = input('Enter any number other than 0: ')
+
+try:
+    if int(num_2) == 0:
+        raise ZeroError('I told you to enter a number OTHER THAN 0!')
+    result = int(num_1) / int(num_2)
+except ZeroError as error:
+    print(error)
+else:
+    print(result)

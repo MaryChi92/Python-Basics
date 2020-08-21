@@ -1,0 +1,19 @@
+class StrError(Exception):
+    def __init__(self, warning):
+        self.warning = warning
+
+
+user_answer = ''
+result = []
+
+while user_answer.lower() != '15951':
+    try:
+        user_answer = input('Enter any number or "15951" to quit: ')
+        if user_answer.isdigit() is False:
+            raise StrError('Please, enter numbers only!')
+    except StrError as error:
+        print(error)
+    else:
+        result.append(user_answer)
+
+print(result)

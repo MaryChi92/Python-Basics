@@ -1,0 +1,19 @@
+class ComplexNumber:
+
+    def __init__(self, a, b):
+        self.a = int(a)
+        self.b = int(b)
+
+        # a•b = (3 + 5i)(1 - 2i)=3•1 - 6i + 5i + 10 = 13 - i
+
+    def __add__(self, other):
+        return f'The result of addition is: {(self.a + other.a)} + {(self.b + other.b)}i'
+
+    def __mul__(self, other):
+        return f'The result of multiplication is: {self.a * other.a - self.b * other.b} + {self.a * other.b + self.b * other.a}i'
+
+
+cn_1 = ComplexNumber(3, 6)
+cn_2 = ComplexNumber(5, -2)
+print(cn_1 + cn_2)
+print(cn_1 * cn_2)
